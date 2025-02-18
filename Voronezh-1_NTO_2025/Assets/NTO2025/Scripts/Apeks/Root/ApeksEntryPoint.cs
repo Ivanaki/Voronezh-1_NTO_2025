@@ -1,4 +1,6 @@
 using BaCon;
+using Game.Params;
+using NTO2025.Scripts.Game;
 using R3;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
@@ -7,10 +9,12 @@ namespace Apeks.Root
 {
     public class ApeksEntryPoint : MonoBehaviour
     {
-        private Subject<Unit> _exitSignalSub = new();
+        private Subject<GameplayExitParams> _exitSignalSub = new();
         
-        public Observable<Unit> Run(DIContainer gameplayContainer)
+        public Observable<GameplayExitParams> Run(DIContainer gameplayContainer)
         {
+            ActiveGoToMenu.ChangeSubject(_exitSignalSub);
+            
             if (Player.instance != null)
             {
                 var player = Player.instance;
@@ -29,7 +33,7 @@ namespace Apeks.Root
 
         public void GoToMenu()
         {
-            _exitSignalSub.OnNext(Unit.Default);
+            _exitSignalSub.OnNext(new GameplayExitParams(false));
         }
     }
 }

@@ -8,8 +8,8 @@ namespace MyUtils
     {
         [SerializeField] private float _buttonWight = 1f;
         
-        private RectTransform _rectTransform;
-        private BoxCollider _boxCollider;
+        [SerializeField] private RectTransform _rectTransform;
+        [SerializeField] private BoxCollider _boxCollider;
         
         private void Awake()
         { 
@@ -29,6 +29,7 @@ namespace MyUtils
 
         public void UpdateSize()
         {
+            Awake();
             _boxCollider.size = new Vector3(_rectTransform.rect.width, _rectTransform.rect.height, _buttonWight);
         }
 

@@ -1,0 +1,16 @@
+{
+  "source": "Unity",
+  "applications": [
+    {
+      "app_key": "application.generated.unity.voronezh1_nto_2025.exe",
+      "launch_type": "url",
+      "url": "steam://launch/",
+      "action_manifest_path": "D:\\Samuylenko\\Github\\Voronezh-1_NTO_2025\\Voronezh-1_NTO_2025\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "strings": {
+        "en_us": {
+          "name": "Voronezh-1_NTO_2025 [Testing]"
+        }
+      }
+    }
+  ]
+}

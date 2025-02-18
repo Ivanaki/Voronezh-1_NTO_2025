@@ -1,6 +1,7 @@
 ﻿using BaCon;
 using Electrical.Scripts._3MainMenu.Root;
 using Game.Params;
+using Game.Root;
 using Gameplay;
 using R3;
 using UnityEngine;
@@ -13,7 +14,7 @@ namespace MainMenu.Root
         [SerializeField] private UIMainMenuBinder _binder;
         private bool _isExam = false;
 
-        private string a = "";
+        private string a = Scenes.APEKS;
         
         public Observable<MainMenuExitParams> Run(DIContainer gameplayContainer)
         {

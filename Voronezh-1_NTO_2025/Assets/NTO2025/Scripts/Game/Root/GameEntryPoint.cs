@@ -5,6 +5,7 @@ using BaCon;
 using Drift.Root;
 using MainMenu.Root;
 using MyUtils;
+using NTO2025.Scripts.Drom.Root;
 using R3;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -45,9 +46,9 @@ namespace Game.Root
 
             if (SceneManager.GetActiveScene().name != Scenes.APEKS &&
                 SceneManager.GetActiveScene().name != Scenes.MAIN_MENU &&
-                SceneManager.GetActiveScene().name != Scenes.START_STEAM_VR &&
                 SceneManager.GetActiveScene().name != Scenes.DRIFT &&
-                SceneManager.GetActiveScene().name != Scenes.AUTOPILOT)
+                SceneManager.GetActiveScene().name != Scenes.AUTOPILOT &&
+                SceneManager.GetActiveScene().name != Scenes.DROM)
             {
                 return;
             }
@@ -85,6 +86,9 @@ namespace Game.Root
                 case "Autopilot":
                     _coroutines.StartCoroutine(LoadAndStartAutopilot());
                     break;
+                case "Drom":
+                    _coroutines.StartCoroutine(LoadAndStartDrom());
+                    break;
             }
         }
 
@@ -107,7 +111,14 @@ namespace Game.Root
             var sceneEntryPoint = Object.FindFirstObjectByType<DriftEntryPoint>();
             var gameplayContainer = _cachedSceneContainer = new DIContainer(_rootContainer); 
             sceneEntryPoint.Run(gameplayContainer).Subscribe(_ =>
-            { 
+            {
+                Debug.Log(_.IsRestart);
+                if (_.IsRestart)
+                {
+                    _coroutines.StartCoroutine(LoadAndStartDrift());
+                    return;
+                }
+                
                 _coroutines.StartCoroutine(LoadAndStartMainMenu());
             });
         }
@@ -119,6 +130,11 @@ namespace Game.Root
             var gameplayContainer = _cachedSceneContainer = new DIContainer(_rootContainer); 
             sceneEntryPoint.Run(gameplayContainer).Subscribe(_ =>
             { 
+                if (_.IsRestart)
+                {
+                    _coroutines.StartCoroutine(LoadAndStartApeks());
+                    return;
+                }
                 _coroutines.StartCoroutine(LoadAndStartMainMenu());
             });
         }
@@ -130,6 +146,29 @@ namespace Game.Root
             var gameplayContainer = _cachedSceneContainer = new DIContainer(_rootContainer); 
             sceneEntryPoint.Run(gameplayContainer).Subscribe(_ =>
             { 
+                if (_.IsRestart)
+                {
+                    _coroutines.StartCoroutine(LoadAndStartAutopilot());
+                    return;
+                }
+                _coroutines.StartCoroutine(LoadAndStartMainMenu());
+            });
+        }
+        
+        private IEnumerator LoadAndStartDrom()
+        {
+            yield return LoadScene(Scenes.DROM);
+            
+            var sceneEntryPoint = Object.FindFirstObjectByType<DromEntryPoint>();
+            var gameplayContainer = _cachedSceneContainer = new DIContainer(_rootContainer); 
+            sceneEntryPoint.Run(gameplayContainer).Subscribe(_ =>
+            { 
+                if (_.IsRestart)
+                {
+                    _coroutines.StartCoroutine(LoadAndStartDrom());
+                    return;
+                }
+                
                 _coroutines.StartCoroutine(LoadAndStartMainMenu());
             });
         }
