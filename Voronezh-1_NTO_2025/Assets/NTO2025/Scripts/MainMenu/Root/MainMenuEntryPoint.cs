@@ -11,10 +11,12 @@ namespace MainMenu.Root
 {
     public class MainMenuEntryPoint : MonoBehaviour
     {
+        [SerializeField] private scanerController _scanerController;
+        
         [SerializeField] private UIMainMenuBinder _binder;
         private bool _isExam = false;
 
-        private string a = Scenes.APEKS;
+        //private string a = Scenes.APEKS;
         
         public Observable<MainMenuExitParams> Run(DIContainer gameplayContainer)
         {
@@ -34,8 +36,8 @@ namespace MainMenu.Root
             
             Debug.Log($"MainMenu ENTRY POINT: save file name = , level to load = ");
             
-            
-            var exit = exitToResultsSignalSubj.Select(isExam => new MainMenuExitParams(a));
+            var e = _scanerController.end;
+            var exit = e.Select(nameScene => new MainMenuExitParams(nameScene));
             
             return exit;
         }
