@@ -38,6 +38,7 @@ namespace NTO2025.Scripts.Game
 
         public void RestartScene()
         {
+            Continue();
             ActiveGoToMenu.GoToMenu(true);
         }
         
