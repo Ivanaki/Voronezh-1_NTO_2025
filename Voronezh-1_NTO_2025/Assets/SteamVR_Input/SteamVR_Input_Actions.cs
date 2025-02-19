@@ -41,6 +41,12 @@ namespace Valve.VR
         
         private static SteamVR_Action_Boolean p_default_Pause;
         
+        private static SteamVR_Action_Vector2 p_default_PlayerCarZX;
+        
+        private static SteamVR_Action_Vector2 p_default_PlayerCarY;
+        
+        private static SteamVR_Action_Boolean p_default_EnterCar;
+        
         private static SteamVR_Action_Vibration p_default_Haptic;
         
         private static SteamVR_Action_Vector2 p_platformer_Move;
@@ -153,6 +159,30 @@ namespace Valve.VR
             }
         }
         
+        public static SteamVR_Action_Vector2 default_PlayerCarZX
+        {
+            get
+            {
+                return SteamVR_Actions.p_default_PlayerCarZX.GetCopy<SteamVR_Action_Vector2>();
+            }
+        }
+        
+        public static SteamVR_Action_Vector2 default_PlayerCarY
+        {
+            get
+            {
+                return SteamVR_Actions.p_default_PlayerCarY.GetCopy<SteamVR_Action_Vector2>();
+            }
+        }
+        
+        public static SteamVR_Action_Boolean default_EnterCar
+        {
+            get
+            {
+                return SteamVR_Actions.p_default_EnterCar.GetCopy<SteamVR_Action_Boolean>();
+            }
+        }
+        
         public static SteamVR_Action_Vibration default_Haptic
         {
             get
@@ -232,6 +262,9 @@ namespace Valve.VR
                     SteamVR_Actions.default_SnapTurnLeft,
                     SteamVR_Actions.default_SnapTurnRight,
                     SteamVR_Actions.default_Pause,
+                    SteamVR_Actions.default_PlayerCarZX,
+                    SteamVR_Actions.default_PlayerCarY,
+                    SteamVR_Actions.default_EnterCar,
                     SteamVR_Actions.default_Haptic,
                     SteamVR_Actions.platformer_Move,
                     SteamVR_Actions.platformer_Jump,
@@ -253,6 +286,9 @@ namespace Valve.VR
                     SteamVR_Actions.default_SnapTurnLeft,
                     SteamVR_Actions.default_SnapTurnRight,
                     SteamVR_Actions.default_Pause,
+                    SteamVR_Actions.default_PlayerCarZX,
+                    SteamVR_Actions.default_PlayerCarY,
+                    SteamVR_Actions.default_EnterCar,
                     SteamVR_Actions.platformer_Move,
                     SteamVR_Actions.platformer_Jump,
                     SteamVR_Actions.buggy_Steering,
@@ -276,6 +312,7 @@ namespace Valve.VR
                     SteamVR_Actions.default_SnapTurnLeft,
                     SteamVR_Actions.default_SnapTurnRight,
                     SteamVR_Actions.default_Pause,
+                    SteamVR_Actions.default_EnterCar,
                     SteamVR_Actions.platformer_Jump,
                     SteamVR_Actions.buggy_Brake,
                     SteamVR_Actions.buggy_Reset};
@@ -283,6 +320,8 @@ namespace Valve.VR
                     SteamVR_Actions.default_Squeeze,
                     SteamVR_Actions.buggy_Throttle};
             Valve.VR.SteamVR_Input.actionsVector2 = new Valve.VR.SteamVR_Action_Vector2[] {
+                    SteamVR_Actions.default_PlayerCarZX,
+                    SteamVR_Actions.default_PlayerCarY,
                     SteamVR_Actions.platformer_Move,
                     SteamVR_Actions.buggy_Steering};
             Valve.VR.SteamVR_Input.actionsVector3 = new Valve.VR.SteamVR_Action_Vector3[0];
@@ -299,6 +338,9 @@ namespace Valve.VR
                     SteamVR_Actions.default_SnapTurnLeft,
                     SteamVR_Actions.default_SnapTurnRight,
                     SteamVR_Actions.default_Pause,
+                    SteamVR_Actions.default_PlayerCarZX,
+                    SteamVR_Actions.default_PlayerCarY,
+                    SteamVR_Actions.default_EnterCar,
                     SteamVR_Actions.platformer_Move,
                     SteamVR_Actions.platformer_Jump,
                     SteamVR_Actions.buggy_Steering,
@@ -321,6 +363,9 @@ namespace Valve.VR
             SteamVR_Actions.p_default_SnapTurnLeft = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/default/in/SnapTurnLeft")));
             SteamVR_Actions.p_default_SnapTurnRight = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/default/in/SnapTurnRight")));
             SteamVR_Actions.p_default_Pause = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/default/in/Pause")));
+            SteamVR_Actions.p_default_PlayerCarZX = ((SteamVR_Action_Vector2)(SteamVR_Action.Create<SteamVR_Action_Vector2>("/actions/default/in/PlayerCarZX")));
+            SteamVR_Actions.p_default_PlayerCarY = ((SteamVR_Action_Vector2)(SteamVR_Action.Create<SteamVR_Action_Vector2>("/actions/default/in/PlayerCarY")));
+            SteamVR_Actions.p_default_EnterCar = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/default/in/EnterCar")));
             SteamVR_Actions.p_default_Haptic = ((SteamVR_Action_Vibration)(SteamVR_Action.Create<SteamVR_Action_Vibration>("/actions/default/out/Haptic")));
             SteamVR_Actions.p_platformer_Move = ((SteamVR_Action_Vector2)(SteamVR_Action.Create<SteamVR_Action_Vector2>("/actions/platformer/in/Move")));
             SteamVR_Actions.p_platformer_Jump = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/platformer/in/Jump")));

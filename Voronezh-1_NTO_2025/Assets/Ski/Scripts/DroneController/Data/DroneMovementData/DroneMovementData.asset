@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 652b4d21d3e1af6479a669e33009e25a, type: 3}
   m_Name: DroneMovementData
   m_EditorClassIdentifier: 
-  MaximumPitchSpeed: 15
-  MaximumRollSpeed: 10
+  MaximumPitchSpeed: 150
+  MaximumRollSpeed: 100
   MaximumYawSpeed: 3
+  IdleUpForce: 98.10001
   ForwardMovementForce: 750
   SidewardMovementForce: 450
   UpwardMovementForce: 450

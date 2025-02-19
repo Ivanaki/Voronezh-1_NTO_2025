@@ -113,6 +113,30 @@ namespace Valve.VR
             }
         }
         
+        public virtual SteamVR_Action_Vector2 PlayerCarZX
+        {
+            get
+            {
+                return SteamVR_Actions.default_PlayerCarZX;
+            }
+        }
+        
+        public virtual SteamVR_Action_Vector2 PlayerCarY
+        {
+            get
+            {
+                return SteamVR_Actions.default_PlayerCarY;
+            }
+        }
+        
+        public virtual SteamVR_Action_Boolean EnterCar
+        {
+            get
+            {
+                return SteamVR_Actions.default_EnterCar;
+            }
+        }
+        
         public virtual SteamVR_Action_Vibration Haptic
         {
             get

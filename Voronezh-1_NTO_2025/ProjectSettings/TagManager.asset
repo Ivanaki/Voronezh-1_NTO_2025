@@ -6,6 +6,8 @@ TagManager:
   tags:
   - projectile
   - FxTemporaire
+  - Paper
+  - HeadCollider
   layers:
   - Default
   - TransparentFX
@@ -20,13 +22,13 @@ TagManager:
   - NotRenderSteamVRCamera
   - 
   - HolderLaserLayer
+  - PlayerCamera
+  - 
+  - Car
+  - HeadCollider
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
   - 
   - 
   - 
