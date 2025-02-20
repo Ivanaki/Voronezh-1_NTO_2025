@@ -290,6 +290,24 @@
                },
                "mode" : "trigger",
                "path" : "/user/hand/right/input/trigger"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/default/in/handbrake"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/y"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/default/in/handbrake"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/y"
             }
          ]
       },
@@ -326,7 +344,7 @@
    "controller_type" : "pico_controller",
    "description" : "(auto-remapped from oculus_touch)",
    "interaction_profile" : "",
-   "name" : "6",
+   "name" : "8",
    "options" : {
       "compatibility_mode" : true,
       "simulate_hmd" : true,

@@ -74,6 +74,10 @@
       "type": "vector1"
     },
     {
+      "name": "/actions/default/in/HandBrake",
+      "type": "boolean"
+    },
+    {
       "name": "/actions/default/out/Haptic",
       "type": "vibration"
     },

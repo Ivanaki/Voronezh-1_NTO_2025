@@ -287,11 +287,11 @@ namespace Ezereal
 /// 
 /// </summary>
 /// <param name="handbrakeValue"></param>
-        void OnHandbrake(InputValue handbrakeValue)
+        public void OnHandbrake(float handbrakeValue)
         {
-            Debug.Log("handBrake:" + handbrakeValue.Get<float>().ToString());
+            Debug.Log("handBrake:" + handbrakeValue);
             
-            currentHandbrakeValue = handbrakeValue.Get<float>();
+            currentHandbrakeValue = handbrakeValue;
 
             if (isStarted)
             {
