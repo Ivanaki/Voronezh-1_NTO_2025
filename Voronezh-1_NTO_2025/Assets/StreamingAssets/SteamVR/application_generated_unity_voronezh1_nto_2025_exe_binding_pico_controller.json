@@ -270,8 +270,26 @@
                      "output" : "/actions/default/in/teleport"
                   }
                },
-               "mode" : "toggle_button",
+               "mode" : "button",
                "path" : "/user/hand/right/input/b"
+            },
+            {
+               "inputs" : {
+                  "pull" : {
+                     "output" : "/actions/default/in/lefttrigger"
+                  }
+               },
+               "mode" : "trigger",
+               "path" : "/user/hand/left/input/trigger"
+            },
+            {
+               "inputs" : {
+                  "pull" : {
+                     "output" : "/actions/default/in/righttrigger"
+                  }
+               },
+               "mode" : "trigger",
+               "path" : "/user/hand/right/input/trigger"
             }
          ]
       },
@@ -308,7 +326,7 @@
    "controller_type" : "pico_controller",
    "description" : "(auto-remapped from oculus_touch)",
    "interaction_profile" : "",
-   "name" : "5",
+   "name" : "6",
    "options" : {
       "compatibility_mode" : true,
       "simulate_hmd" : true,

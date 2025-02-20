@@ -35,7 +35,9 @@ namespace Valve.VR.InteractionSystem
             UpdateAll();
         }
 
-        protected override void GrabOff()
+        /*
+         ///////////////////////////////////////////////
+         protected override void GrabOff()
         {
             _grabOff.Invoke();
             
@@ -65,7 +67,7 @@ namespace Valve.VR.InteractionSystem
                 
                 _pressedWithMode.Invoke(mode);
             } 
-        }
+        }*/
         
         /*protected override void HandHoverUpdate(Hand hand)
         {

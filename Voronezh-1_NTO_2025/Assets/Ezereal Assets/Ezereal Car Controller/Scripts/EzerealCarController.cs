@@ -161,14 +161,13 @@ namespace Ezereal
 
 
         }
-/// <summary>
-/// 
-/// </summary>
-/// <param name="accelerationValue"></param>
-        void OnAccelerate(InputValue accelerationValue)
+
+/////////////////////////////////////////////////////////
+        public void OnAccelerate(float accelerationValue)
         {
-            currentAccelerationValue = accelerationValue.Get<float>();
-            Debug.Log("Acceleration: " + currentAccelerationValue.ToString());
+            print("Gaz: " + accelerationValue);
+            currentAccelerationValue = accelerationValue;
+            //Debug.Log("Acceleration: " + currentAccelerationValue.ToString());
         }
 
         void Acceleration()
@@ -251,13 +250,11 @@ namespace Ezereal
                 UpdateAccelerationSlider();
             }
         }
-/// <summary>
-/// 
-/// </summary>
-/// <param name="brakeValue"></param>
-        void OnBrake(InputValue brakeValue)
+        
+        /////////////////////////////////////
+        public void OnBrake(float brakeValue)
         {
-            currentBrakeValue = brakeValue.Get<float>();
+            currentBrakeValue = brakeValue;
             Debug.Log("Brake:" + currentBrakeValue.ToString());
 
             if (isStarted && ezerealLightController != null)
@@ -343,14 +340,11 @@ namespace Ezereal
             }
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="turnValue"></param>
-        void OnSteer(InputValue turnValue)
+        //////////////////////////////////////////////////////
+        public void OnSteer(float turnValue)
         {
-            Debug.Log("turnValue:" + turnValue.Get<float>());
-            targetSteerAngle = turnValue.Get<float>() * maxSteerAngle;
+            Debug.Log("Steer: " + turnValue);
+            targetSteerAngle = turnValue * maxSteerAngle;
         }
 
         void Steering()
@@ -383,7 +377,44 @@ namespace Ezereal
             }
         }
 
-        void OnDownShift()
+        public void SetGear(string gear)
+        {
+            UpdateGearText(gear);
+            
+            switch (gear)
+            {
+                case "P":
+                    currentGear = AutomaticGears.Neutral;
+                    if (isStarted && ezerealLightController != null)
+                    {
+                        ezerealLightController.ReverseLightsOff();
+                    }
+                    break;
+                case "N":
+                    currentGear = AutomaticGears.Neutral;
+                    if (isStarted && ezerealLightController != null)
+                    {
+                        ezerealLightController.ReverseLightsOff();
+                    }
+                    break;
+                case "D":
+                    currentGear = AutomaticGears.Drive;
+                    if (isStarted && ezerealLightController != null)
+                    {
+                        ezerealLightController.ReverseLightsOff();
+                    }
+                    break;
+                case "R":
+                    currentGear = AutomaticGears.Reverse;
+                    if (isStarted && ezerealLightController != null)
+                    {
+                        ezerealLightController.ReverseLightsOn();
+                    }
+                    break;
+            }
+        }
+        
+        /*void OnDownShift()
         {
             switch (currentGear)
             {
@@ -429,7 +460,7 @@ namespace Ezereal
                     //Debug.Log("Drive, can't go any higher");
                     break;
             }
-        }
+        }*/
 
 
 

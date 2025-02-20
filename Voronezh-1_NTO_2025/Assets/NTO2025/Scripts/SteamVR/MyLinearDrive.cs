@@ -14,8 +14,8 @@ namespace Valve.VR.InteractionSystem
         [SerializeField] private float _centerValue;
         
         
-        [SerializeField] private UnityEvent _attach;
-        [SerializeField] private UnityEvent _detech;
+        public UnityEvent _attach;
+        public UnityEvent _detech;
         
         
         [SerializeField] private UnityEvent _pressed;
@@ -58,11 +58,7 @@ namespace Valve.VR.InteractionSystem
         
         public void SetStartSettings()
         {
-            mappingChangeRate = 0f;
-            initialMappingOffset = 0f;
-            linearMapping.value = Mathf.Clamp01(CalculateLinearMapping( _basePosition ) );
-           
-            transform.position = Vector3.Lerp( startPosition.position, endPosition.position, linearMapping.value );
+            SetPosition(_basePosition);
         }
 
         protected override void OnDetachedFromHand(Hand hand)
@@ -111,6 +107,14 @@ namespace Valve.VR.InteractionSystem
             base.HandAttachedUpdate(hand);
             
             _attachedUpdate.Invoke();
+        }
+
+        public void SetPosition(Transform pos)
+        {
+            mappingChangeRate = 0f;
+            initialMappingOffset = 0f;
+            linearMapping.value = Mathf.Clamp01(CalculateLinearMapping( pos ) );
+            transform.position = Vector3.Lerp( startPosition.position, endPosition.position, linearMapping.value );
         }
     }
 }
