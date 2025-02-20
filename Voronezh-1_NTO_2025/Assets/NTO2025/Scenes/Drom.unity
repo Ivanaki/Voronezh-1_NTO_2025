@@ -200,6 +200,112 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 873134886}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1102225447
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 216836308292511544, guid: fbac8b1c4ac21a14890299ebfbd53ce8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1204200440870245832, guid: fbac8b1c4ac21a14890299ebfbd53ce8,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1842803934015884809, guid: fbac8b1c4ac21a14890299ebfbd53ce8,
+        type: 3}
+      propertyPath: m_Name
+      value: Electric Truck - Ready To Drive
+      objectReference: {fileID: 0}
+    - target: {fileID: 6573113666157947095, guid: fbac8b1c4ac21a14890299ebfbd53ce8,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.2466784
+      objectReference: {fileID: 0}
+    - target: {fileID: 6573113666157947095, guid: fbac8b1c4ac21a14890299ebfbd53ce8,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.015552044
+      objectReference: {fileID: 0}
+    - target: {fileID: 6573113666157947095, guid: fbac8b1c4ac21a14890299ebfbd53ce8,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.0594766
+      objectReference: {fileID: 0}
+    - target: {fileID: 6573113666157947095, guid: fbac8b1c4ac21a14890299ebfbd53ce8,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6573113666157947095, guid: fbac8b1c4ac21a14890299ebfbd53ce8,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6573113666157947095, guid: fbac8b1c4ac21a14890299ebfbd53ce8,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6573113666157947095, guid: fbac8b1c4ac21a14890299ebfbd53ce8,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6573113666157947095, guid: fbac8b1c4ac21a14890299ebfbd53ce8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6573113666157947095, guid: fbac8b1c4ac21a14890299ebfbd53ce8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6573113666157947095, guid: fbac8b1c4ac21a14890299ebfbd53ce8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6578628440878437316, guid: fbac8b1c4ac21a14890299ebfbd53ce8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960444340419530247, guid: fbac8b1c4ac21a14890299ebfbd53ce8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7774533907778639180, guid: fbac8b1c4ac21a14890299ebfbd53ce8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 9019896817665590752, guid: fbac8b1c4ac21a14890299ebfbd53ce8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2742353538329585523, guid: fbac8b1c4ac21a14890299ebfbd53ce8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 5045061686763717582, guid: fbac8b1c4ac21a14890299ebfbd53ce8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+  m_SourcePrefab: {fileID: 100100000, guid: fbac8b1c4ac21a14890299ebfbd53ce8, type: 3}
 --- !u!1001 &1143660418
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -616,3 +722,4 @@ SceneRoots:
   - {fileID: 2905337234259894206}
   - {fileID: 873134886}
   - {fileID: 1143660418}
+  - {fileID: 1102225447}
