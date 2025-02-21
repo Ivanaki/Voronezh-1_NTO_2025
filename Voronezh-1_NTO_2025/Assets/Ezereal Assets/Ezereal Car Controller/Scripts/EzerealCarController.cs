@@ -75,7 +75,8 @@ namespace Ezereal
         {
            // BoxCollider boxCollider = GetComponent<BoxCollider>();
             
-            
+            SetGear("N"); 
+           
             wheels = new WheelCollider[]
             {
             frontLeftWheelCollider,
@@ -539,10 +540,14 @@ namespace Ezereal
             currentGearTMP_Dashboard.text = gear;
         }
 
+        public float Speed;
+        
         void UpdateSpeedText(float speed)
         {
             speed = Mathf.Abs(speed);
-
+            
+            Speed = speed;
+            
             currentSpeedTMP_UI.text = speed.ToString("F0");
             currentSpeedTMP_Dashboard.text = speed.ToString("F0");
         }

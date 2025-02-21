@@ -27,6 +27,8 @@ namespace NTO2025.Scripts
         {
             Vector3 moveDirection = new Vector3(zxInput.x, yInput, zxInput.y);
             carInteraction.playerInsidePosition.Translate(moveDirection * (Time.deltaTime * _speed)); 
+            
+            
         }
     }
 }

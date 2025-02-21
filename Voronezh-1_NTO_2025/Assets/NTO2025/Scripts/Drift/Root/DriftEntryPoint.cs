@@ -9,7 +9,9 @@ namespace Drift.Root
 {
     public class DriftEntryPoint : MonoBehaviour
     {
-        private Subject<GameplayExitParams> _exitSignalSub = new();
+        public Subject<GameplayExitParams> _exitSignalSub = new();
+        
+        [SerializeField] private Transform _basePosition;
         
         public Observable<GameplayExitParams> Run(DIContainer gameplayContainer)
         {
@@ -19,7 +21,7 @@ namespace Drift.Root
             {
                 var player = Player.instance;
                 var playerCamera = player.hmdTransforms[0].GetComponent<Camera>();
-                player.transform.position = new Vector3(0, 0, 0);
+                player.transform.position = _basePosition.position;
                 
                 
                 
@@ -27,6 +29,8 @@ namespace Drift.Root
                 
             }
 
+            _exitSignalSub.Subscribe(_ => DontDestroyOnLoad(Player.instance.gameObject));
+            
             Debug.Log($"ENTRY POINT: vr is ");
             return _exitSignalSub;
         }

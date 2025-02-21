@@ -24,6 +24,10 @@ public class lighter : MonoBehaviour
     private float a;
     void Start()
     {
+        if (PlayerPrefs.GetFloat("record") < 5f)
+        {
+            PlayerPrefs.SetFloat("record", 999);
+        }
         localTime = 0f;
         a = Random.value * (1.5f - 0.5f);
     }
@@ -36,7 +40,6 @@ public class lighter : MonoBehaviour
             ob1.SetActive(false);
             ob2.SetActive(false);
             ob3.SetActive(false);
-            ob4.SetActive(false);
             ob5.SetActive(true);
         }
         if (localTime > 0)
@@ -46,7 +49,6 @@ public class lighter : MonoBehaviour
                 ob5.SetActive(false);
                 ob1.SetActive(false);
                 ob2.SetActive(true);
-                ob4.SetActive(false);
                 if (car.velocity.magnitude * 1000000 > 3 && !(localTime + 4 + a < Time.time))
                 {
                     localTime = -1f;
@@ -57,7 +59,6 @@ public class lighter : MonoBehaviour
                     ob1.SetActive(false);
                     ob2.SetActive(false);
                     ob3.SetActive(true);
-                    ob4.SetActive(false);
                     
                     if (localTime + 4 + a < Time.time)
                     {
@@ -97,7 +98,7 @@ public class lighter : MonoBehaviour
                 ob4.SetActive(false);
                 
             }
-            if (global.checkpoints >= 2)
+            if (global.checkpoints >= 7)
             {
 
                 if (Mathf.Floor(Time.time - (localTime + 4 + a)) < PlayerPrefs.GetFloat("record"))

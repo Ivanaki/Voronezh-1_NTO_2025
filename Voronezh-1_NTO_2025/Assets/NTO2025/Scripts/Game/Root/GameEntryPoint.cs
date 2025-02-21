@@ -7,8 +7,10 @@ using MainMenu.Root;
 using MyUtils;
 using NTO2025.Scripts.Drom.Root;
 using R3;
+using SaveLaod;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Valve.VR.InteractionSystem;
 
 namespace Game.Root
 {
@@ -31,8 +33,8 @@ namespace Game.Root
             _coroutines = new GameObject("[COROUTINES]").AddComponent<Coroutines>();
             Object.DontDestroyOnLoad(_coroutines.gameObject);
             
-            //var save = new JsonToFileLoadSaveService();
-            //_rootContainer.RegisterInstance<ILoadSaveService>(save);
+            var save = new JsonToFileLoadSaveService();
+            _rootContainer.RegisterInstance<ILoadSaveService>(save);
 
             //_rootContainer.RegisterFactory(_ => new Account(save)).AsSingle();
             //_rootContainer.RegisterFactory(_ => new CursorLocker()).AsSingle();
@@ -112,6 +114,7 @@ namespace Game.Root
             var gameplayContainer = _cachedSceneContainer = new DIContainer(_rootContainer); 
             sceneEntryPoint.Run(gameplayContainer).Subscribe(_ =>
             {
+                
                 Debug.Log(_.IsRestart);
                 if (_.IsRestart)
                 {
