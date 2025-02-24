@@ -24297,6 +24297,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Electric Truck - Ready To Drive
       objectReference: {fileID: 0}
+    - target: {fileID: 3223457185378915454, guid: a212fa3ad2dd5c54b91f70de77f3a067,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4236666833536390396, guid: a212fa3ad2dd5c54b91f70de77f3a067,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -24350,7 +24355,7 @@ PrefabInstance:
     - target: {fileID: 7117059024040130699, guid: a212fa3ad2dd5c54b91f70de77f3a067,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

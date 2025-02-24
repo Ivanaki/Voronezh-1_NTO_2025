@@ -1,3 +1,6 @@
+#if UNITY_EDITOR
+
+
 using UnityEditor;
 using UnityEngine;
 using UnityEditor.Experimental.GraphView;
@@ -105,3 +108,6 @@ public static class PlayFromSceneMenu
         return scenePath[(scenePath.LastIndexOf('/') + 1)..].Replace(".unity", "");
     }
 }
+
+
+#endif
