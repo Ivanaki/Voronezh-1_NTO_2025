@@ -9,6 +9,7 @@ namespace NTO2025.Scripts.Drift
 {
     public class Exit : MonoBehaviour
     {
+        public AudioListener Listener;
         public DriftEntryPoint DriftEntryPoint;
         
         private void OnTriggerEnter(Collider other)
